@@ -2,41 +2,146 @@
   <head>
   </head>
   <style>
-  #circle1 {
+  html{
+  background-color: #666;
+}
+
+section{
+  margin-left: 40px;
+  margin-top: 30px;
+}
+#circle1 {
   position: fixed;
 	width: 40vw;
 	height: 40vw;
-	background: linear-gradient(#383839, transparent 20%), linear-gradient(0deg, #383839, transparent 20%), url("http://i666.photobucket.com/albums/vv28/jordanebranch/bridge_zps14koymf3.jpeg");
+	background:  url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/new_year_background.png");
 	-moz-border-radius: 20vw;
 	-webkit-border-radius: 20vw;
 	border-radius: 20vw;
   position: fixed;
-  top: 130px;
-  left: 80px;
+  /*top: 130px;
+  left: 80px;*/
 }
 
 #circle2 {
 	width: 40vw;
 	height: 40vw;
-	background: linear-gradient(#383839, transparent 20%), linear-gradient(0deg, #383839, transparent 20%), url("http://i666.photobucket.com/albums/vv28/jordanebranch/bridge_zps14koymf3.jpeg");
+	background:  url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/new_year_background.png");
 	-moz-border-radius: 20vw;
 	-webkit-border-radius: 20vw;
 	border-radius: 20vw;
   position: fixed;
-  top: 130px;
-  left: 600px;
+  /*top: 130px;
+  left: 600px;*/
 }
 
 .container {
-  width: 950px;
+  width: 100%;
 }
 
+.publishedText{
+  position: relative;
+  font: small-caps 6vw 'Lato', sans-serif;
+  top: 10vw;
+  left: 8vw;
+}
+
+.unpublishedText{
+  position: relative;
+  font: small-caps 6vw 'Lato', sans-serif;
+  top: 10vw;
+  left: 5vw;
+}
+
+#circle1:hover{
+  border: 6px solid;
+}
+
+#circle2:hover{
+  border: 6px solid;
+}
+
+a {
+  color: #666;
+}
+
+.flex {
+    display: flex;
+  text-wrap: none;
+  padding: 0;
+  margin-bottom:50vw;
+  float: left;
+  width: 50%;
+   background-color: #ccc;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+@media(max-width: 496px){
+  .flex{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+  section {
+    margin-left: 0px;
+  }
+  #circle1 {
+  position: fixed;
+	width: 200px;
+	height: 200px;
+	background:  url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/new_year_background.png");
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+    margin-bottom:10px;
+  /*top: 130px;
+  left: 80px;*/
+}
+
+#circle2 {
+  position: fixed;
+	width: 200px;
+	height: 200px;
+	background:  url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/new_year_background.png");
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+  top: 260px;
+  left: 10px;
+}
+ .publishedText{
+  position: relative;
+  font: small-caps 29px 'Lato', sans-serif;
+  top: 50px;
+  left: 43px;
+}
+
+.unpublishedText{
+  position: relative;
+  font: small-caps 29px 'Lato', sans-serif;
+  top: 55px;
+  left: 29px;
+}
+}
+
+
   </style>
-  <body>
-    <div class=container>
-    <div id="circle1">
-      <p>dajdfkl</p></div>
-    <div id="circle2"></div>
+   <body>
+    <div class="container">
+      <section>
+      <div class="flex">
+    <a href="published.html"><div id="circle1">
+      <p class="publishedText">Published</p></div></a>
+      </div>
+      <div class="flex">
+    <a href="unpublished.html"><div id="circle2">
+      <p class="unpublishedText">Unpublished</p></div></a>
+      </div>
+      </section>
     </div>
   </body>
 </html>
