@@ -1,0 +1,42 @@
+<html>
+  <head>
+  </head>
+  <style>
+  #circle1 {
+  position: fixed;
+	width: 40vw;
+	height: 40vw;
+	background: linear-gradient(#383839, transparent 20%), linear-gradient(0deg, #383839, transparent 20%), url("http://i666.photobucket.com/albums/vv28/jordanebranch/bridge_zps14koymf3.jpeg");
+	-moz-border-radius: 20vw;
+	-webkit-border-radius: 20vw;
+	border-radius: 20vw;
+  position: fixed;
+  top: 130px;
+  left: 80px;
+}
+
+#circle2 {
+	width: 40vw;
+	height: 40vw;
+	background: linear-gradient(#383839, transparent 20%), linear-gradient(0deg, #383839, transparent 20%), url("http://i666.photobucket.com/albums/vv28/jordanebranch/bridge_zps14koymf3.jpeg");
+	-moz-border-radius: 20vw;
+	-webkit-border-radius: 20vw;
+	border-radius: 20vw;
+  position: fixed;
+  top: 130px;
+  left: 600px;
+}
+
+.container {
+  width: 950px;
+}
+
+  </style>
+  <body>
+    <div class=container>
+    <div id="circle1">
+      <p>dajdfkl</p></div>
+    <div id="circle2"></div>
+    </div>
+  </body>
+</html>
