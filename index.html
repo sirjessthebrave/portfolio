@@ -7,7 +7,11 @@
      <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   </head>
   <style>
-    nav {
+    #container{
+  width: 950px;
+}
+
+nav {
   position: fixed;
   width: 100%;
   padding: 0;
@@ -31,6 +35,7 @@ nav ul li a {
   color: #383839;
   margin: 0px 0px;
   padding-bottom: 10px;
+  padding-top: 10px;
   font: small-caps 20px 'Lato', sans-serif;
   letter-spacing: 1px;
 }
@@ -51,37 +56,70 @@ nav ul li a {
 }*/
 
 h1 {
-  font: small-caps 10vw 'Lato', sans-serif;
-  color: white;
+  font: small-caps 5vw 'Lato', sans-serif;
   margin-top: 0px;
-  padding-left: 2vw;
+  line-height: 4vw;
+  position: fixed;
+  top: 12vw;
 }
 
 #circle {
-	width: 40vw;
-	height: 40vw;
+	width: 50vh;
+	height: 50vh;
+  margin-right: 1rem;
 	background: linear-gradient(#383839, transparent 20%), linear-gradient(0deg, #383839, transparent 20%), url("http://i666.photobucket.com/albums/vv28/jordanebranch/bridge_zps14koymf3.jpeg");
-	-moz-border-radius: 20vw;
-	-webkit-border-radius: 20vw;
-	border-radius: 20vw;
+	-moz-border-radius: 15vw;
+	-webkit-border-radius: 15vw;
+	border-radius: 15vw;
   position: fixed;
   top: 130px;
-  left: 80px;
+  left: 30px;
+}
+
+.about {
+  float: right;
+  display: flex;
+  width: 70%;
+  margin-left: 2vw;
+}
+
+p{
+  font: small-caps 2vw 'Lato', sans-serif;
+  margin-top: 0px;
+  line-height: 3vw;
+  position: fixed;
+  top: 17vw;
+}
+
+a:hover{
+  background-color: #666;
+  color: white;
+}
+
+#name li a:hover{
+  color: #666;
+  background-color: white;
 }
 
   </style>
   <body>
-    <div class="container">
+   <body>
       <nav>
       <ul>
         <div id="name">
           <li><a href="#top">Jordan Branch</a></li>
         </div>
         <li><a href="resume.html">Resume</a></li>
-        <li><a href="types.html">Portfolio</a></li>
+        <li><a href="#tech">Portfolio</a></li>
       </ul>
     </nav>
+    <div id="container">
       <div id="circle"></div>
+      <div class="about">
+        <h1>digital strategist/web developer</h1>
+        </div>
+      <div class="about">
+        <p>lkjlfjadf</p></div>
       <footer>
       </footer>
     </div>
