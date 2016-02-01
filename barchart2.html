@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="d3/d3.js"></script>
+</head>
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.bar {
+  fill: #6b486b;
+
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.chart text { 
+ font: 18px sans-serif;
+  font-style: bold;
+}
+
+.axis text {
+  font: 14px sans-serif;
+  font-style: bold;
+  padding-bottom: 10px;
+}
+
+</style>
+<svg class="chart"></svg>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+//Code sourced from: http://bl.ocks.org/mbostock/3885705
+//Text wrapper code: http://bl.ocks.org/mbostock/7555321
+
+var margin = {top: 50, right: 30, bottom: 80, left: 120},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+	.ticks(10);
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+	.ticks(10);
+
+var chart = d3.select(".chart")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("topfivecompanytotal.csv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.company; }));
+  y.domain([0, d3.max(data, function(d) { return d.moneySpent + 31901; })]);
+
+chart.append("text")     
+        .attr("x", 400)
+        .attr("y", -30 )
+        .style("text-anchor", "middle")
+		.style("font-weight", "bold")
+        .text("Top 5 pharmaceutical companies in spending in the last 5 months of 2013");
+
+chart.append("text")     
+        .attr("x", 400 )
+        .attr("y", 445 )
+        .style("text-anchor", "middle")
+        .text("Pharmaceutical companies");
+		
+	chart.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+	  .selectAll(".tick text")
+      .call(wrap, x.rangeBand());
+	  
+	chart.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Total company spending on drug marketing");
+	
+  chart.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+	  
+
+  chart.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.company); })
+      .attr("y", function(d) { return y(d.moneySpent); })
+      .attr("height", function(d) { return height - y(d.moneySpent); })
+      .attr("width", x.rangeBand());
+});
+
+function wrap(text, width) {
+  text.each(function() {
+    var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, 
+        y = text.attr("y"),
+        dy = parseFloat(text.attr("dy")),
+        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+      }
+    }
+  });
+}
+
+function type(d) {
+  d.moneySpent = +d.moneySpent; 
+  return d;
+}
+
+yAxis.tickFormat (function(d) {
+	return "$" + d/1000000 + "M"; });
+
+//var formatCurrency =
+//d3.format("+$,.2f");
+	
+</script>
+<body>
+<div id="container" style="height: 75px; margin: 0 auto"></div>
+</body>
+</html>
