@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="d3/d3.js"></script>
+</head>
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+rect.bar {
+  fill: #6b486b;
+  margin-right: 100px;
+}
+
+.chart text{ 
+ font: 18px sans-serif;
+  font-style: bold;
+}
+
+.axis text {
+  font: 14px sans-serif;
+  font-style: bold;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+<svg class="chart"></svg>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+//code sourced from: http://bl.ocks.org/mbostock/3885705
+
+var margin = {top: 50, right: 30, bottom:60, left: 120},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+	
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+	
+yAxis.tickFormat (function(d) {
+	return "$" + d/1000000 + "M"; });
+	
+var chart = d3.select(".chart")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("drugcost.csv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.drug; }));
+  y.domain([0, d3.max(data, function(d) { return d.totalSum + 932866; })]);
+
+chart.append("text")      
+        .attr("x", 400)
+        .attr("y", -30 )
+        .style("text-anchor", "middle")
+		.style("font-weight", "bold")
+        .text("Top 10 drugs in money spent marketing the drug in the last 5 months of 2013");
+
+chart.append("text")      
+        .attr("x", 400 )
+        .attr("y", 445 )
+        .style("text-anchor", "middle")
+        .text("Pharmaceutical drugs");
+		
+	chart.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+	  
+	chart.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Total spent on marketing drug");
+	
+  chart.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+  chart.selectAll(".bar")
+      .data(data)
+      .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.drug); })
+      .attr("y", function(d) { return y(d.totalSum); })
+      .attr("height", function(d) { return height - y(d.totalSum); })
+      .attr("width", x.rangeBand())
+});
+	
+function type(d) {
+  d.totalSum = +d.totalSum; 
+  return d;
+}
+
+</script>
+<body>
+<div id="container" style="height: 75px; margin: 0 auto"></div>
+</body>
+</html>
