@@ -7,7 +7,7 @@
      <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   </head>
   <style>
-   nav {
+  nav {
   position: fixed;
   width: 100%;
   padding: 0;
@@ -44,12 +44,14 @@ nav ul li a {
 }
 
 h1 {
-  font: small-caps 40px 'Lato', sans-serif;
-  margin-bottom: 60px;
+  font: small-caps 50px 'Lato', sans-serif;
+  margin-bottom: 90px;
   padding-left: 40px;
     margin-top: 0px;
   position: relative;
-  top: 80px;
+  top: 100px;
+  color: #666;
+  letter-spacing: 1px;
 }
 
 .thumbnail{
@@ -65,15 +67,46 @@ h1 {
 .img-responsive{
   width:260px;
   height:220px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 2px 0px #666;
 }
 
-a:hover{
+a .img-responsive:hover{
   opacity: .6;
-    -moz-transition: all .7s linear;
-  -ms-transition: all .7s linear;
-  -o-transition: all .7s linear;
-  -webkit-transition: all .7s linear;
-  transition: all .7s linear;
+    -moz-transition: all .5s linear;
+  -ms-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .3s linear;
+   -webkit-box-shadow: 0px 0px 30px 0px #666;
+-moz-box-shadow:    0px 0px 30px 0px #666;
+box-shadow:         0px 0px 2px 0px #666;
+}
+
+nav ul li a:hover{
+  opacity: .7;
+}
+
+@media(max-width: 910px){
+  .thumbnail{
+  display: flex;
+  width: 45%;
+  float: left;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+}
+@media(max-width: 610px){
+  .thumbnail{
+  display: flex;
+  width: 100%;
+  float: left;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
 }
   </style>
   <body>
