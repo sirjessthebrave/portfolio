@@ -7,18 +7,59 @@
      <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   </head>
   <style>
-    h1 {
+   nav {
+  position: fixed;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  z-index: 2;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #383839;
+  background-color: white;
+}
+
+nav ul li {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 25%;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #383839;
+  margin: 0px;
+  padding-bottom: 10px;
+  font: small-caps 21px 'Lato', sans-serif;
+  letter-spacing: 1px;
+}
+
+#name li{
+  float: left;
+  text-align: left;
+  color: #383839;
+  width: 40%;
+}
+
+h1 {
   font: small-caps 40px 'Lato', sans-serif;
-  margin-bottom: 0px;
+  margin-bottom: 60px;
   padding-left: 40px;
+    margin-top: 0px;
+  position: relative;
+  top: 80px;
 }
 
 .thumbnail{
   display: flex;
-  width: 20%;
+  width: 30%;
   float: left;
   flex-wrap: wrap;
-  margin: 50px;
+  margin-top: 50px;
+  margin-right: 3px;
+  margin-left: 20px;
   margin-bottom: 0px;
 }
 .img-responsive{
@@ -27,10 +68,24 @@
 }
 
 a:hover{
-  opacity: .7;
+  opacity: .6;
+   -moz-transition: all .7s linear;
+  -ms-transition: all .7s linear;
+  -o-transition: all .7s linear;
+  -webkit-transition: all .7s linear;
+  transition: all .7s linear;
 }
   </style>
   <body>
+  <nav>
+      <ul>
+        <div id="name">
+          <li><a href="index.html">Jordan Branch</a></li>
+        </div>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="types.html">Portfolio</a></li>
+      </ul>
+    </nav>
     <h1>Unpublished Work</h1>
            
     <!-- Page Content -->
