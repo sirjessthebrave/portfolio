@@ -1,12 +1,13 @@
 <html>
   <head>
+ <!--  organize your head thus: title, all meta tags, link tags, script tags, style tags UNLESS they specifically go together (like a jquery library that comes with a style sheet) -->
     <title>Jordan Branch Portfolio</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet' type='text/css' />
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet' type='text/css' /><!-- why font awesome and google fonts? -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   </head>
-  <style>
+  <style> /*to link this, have a sheet labeled style.css then use the HTML link tag, pass through the relative link ('style.css' instead of a direct link ('www.website.com/style.css'))*/
   nav {
   position: fixed;
   width: 100%;
@@ -171,7 +172,7 @@ button:hover{
   <body>
       <nav>
     <ul>
-      <div id="name">
+      <div id="name"> <!-- try to stay away from ID as much as possible - there are very few use cases for ID's rather than classes; also dont use a div inside of a <ul>, <ul> and <li> tags go together, you can wrap the full UL in a div. Make sure to close the div.... floating or unclosed HTML tags will come back to bite you hard core-->
         <li><a href="#top">Jordan Branch</a></li>
       </div>
       <li><a href="resume.html">Resume</a></li>
@@ -180,13 +181,14 @@ button:hover{
     </ul>
   </nav>
   <div id="container">
-    <section>
+    <section> <!-- I dont know much about the section tag, you MIGHT not need a div wrapper with a section.. lets look it up -->
       <div id="circle"></div>
       <div class="about">
         <h1>Front-End Developer</h1>
       </div>
       <div class="about">
-        <p class="aboutText">I am a student at the University of Maryland with a passion for front-end development and digital strategy. With a desire to learn about emerging technologies, I stay on top of the digital age. I'm currently learning PHP and working toward my
+        <p class="aboutText"> <!-- good use of class naming about-wrapper, then about- title, about-text ect is a good way of labeling -->
+        I am a student at the University of Maryland with a passion for front-end development and digital strategy. With a desire to learn about emerging technologies, I stay on top of the digital age. I'm currently learning PHP and working toward my
           certification in Google Ads and Google Analytics.
            </p>
       </div>
