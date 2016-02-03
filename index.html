@@ -7,11 +7,7 @@
      <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   </head>
   <style>
-   #container{
-  width: 950px;
-}
-
-nav {
+  nav {
   position: fixed;
   width: 100%;
   padding: 0;
@@ -20,6 +16,7 @@ nav {
   border-width: 0px 0px 1px 0px;
   border-style: solid;
   border-color: #383839;
+  background-color: white;
 }
 
 nav ul li {
@@ -35,8 +32,7 @@ nav ul li a {
   color: #383839;
   margin: 0px 0px;
   padding-bottom: 10px;
-  padding-top: 10px;
-  font: small-caps 20px 'Lato', sans-serif;
+  font: small-caps 21px 'Lato', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -56,39 +52,40 @@ nav ul li a {
 }*/
 
 h1 {
-  font: small-caps 4.5vw 'Lato', sans-serif;
-  margin-top: 0px;
-  line-height: 3vw;
-  position: fixed;
-  top: 130px;
+  font: small-caps 44px 'Lato', sans-serif;
+  line-height: 50px;
+  position: relative;
+  top: -230px;
+  left: -30px;
 }
 
 #circle {
 	width: 300px;
 	height: 300px;
-  margin-right: 1rem;
+  margin-left: 4vw;
 	background: linear-gradient(#383839, transparent 20%), linear-gradient(0deg, #383839, transparent 20%), url("http://i666.photobucket.com/albums/vv28/jordanebranch/Jordan%20Branch_zps5xgim5ku.jpg");
 	-moz-border-radius: 150px;
 	-webkit-border-radius: 150px;
 	border-radius: 150px;
-  position: fixed;
+  position: relative;
   top: 130px;
-  left: 30px;
+  left: 50px;
 }
 
 .about {
   float: right;
   display: flex;
-  width: 60%;
+  width: 400px;
   margin-left: 2vw;
 }
 
-p{
-  font: 2vw 'Lato', sans-serif;
-  margin-top: 0px;
-  line-height: 4vw;
-  position: fixed;
-  top: 200px;
+.aboutText{
+  font: 20px 'Lato', sans-serif;
+    margin-right: 40px;
+  line-height: 3vw;
+  position: relative;
+  top: -130px;
+  left: 400px;
 }
 
 a{
@@ -96,38 +93,119 @@ a{
   color: black;
 }
 a:hover{
-  background-color: #666;
-  color: white;
+  opacity: .7;
 }
 
 #name li a:hover{
   color: #666;
   background-color: white;
+  opacity: 1;
+}
+
+section{
+  height: 260px;
+  width: 900px;
+  margin: 0 auto;
+}
+
+#contact-bar li ul{
+   position: relative;
+  display: inline-block;
+  float: right;
+  width: 9%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.contactEmoji{
+  font-size: 3vw;
+   color: #393939;
+}
+
+a .contactEmoji:hover {
+  color: #909090;
+  -moz-transition: all .5s linear;
+  -ms-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+
+li
+{
+list-style-type: none;
+}
+
+button{
+  border: 1px solid black;
+  height: 40px;
+  width: 160px;
+  padding: 5px;
+  border-radius: 10px;
+  position: relative;
+  bottom: 5px;
+  left: 0;
+  font-size: 20px;
+  color: #666;
+  background-color: white;
+  font: small-caps 20px 'Lato', sans-serif;
+}
+button:hover{
+  background-color: #393939;
+  color: white;
+  border-color: white;
+   -moz-transition: all .5s linear;
+  -ms-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
 }
 
 
   </style>
   <body>
       <nav>
-      <ul>
-        <div id="name">
-          <li><a href="#top">Jordan Branch</a></li>
-        </div>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="types.html">Portfolio</a></li>
-      </ul>
-    </nav>
-    <div id="container">
-      <section>
+    <ul>
+      <div id="name">
+        <li><a href="#top">Jordan Branch</a></li>
+      </div>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="types.html">Portfolio</a></li>
+
+    </ul>
+  </nav>
+  <div id="container">
+    <section>
       <div id="circle"></div>
       <div class="about">
-        <h1>digital strategist/web developer</h1>
-        </div>
+        <h1>Front-End Developer</h1>
+      </div>
       <div class="about">
-        <p>I am a student at the University of Maryland with a passion for front-end development and digital strategy. With a desire to learn about emerging technologies, I stay on top of the digital age. I'm currently learning PHP and working toward my certification in Google Ads and Google Analytics.<br>Connect with me on <a href="https://www.linkedin.com/in/jordanebranch">LinkedIn</a> or <a href="https://twitter.com/Jordan_EBranch">Twitter.</a> </p></div>
-      </section>
-      <footer>
-      </footer>
-    </div>
-  </body>
+        <p class="aboutText">I am a student at the University of Maryland with a passion for front-end development and digital strategy. With a desire to learn about emerging technologies, I stay on top of the digital age. I'm currently learning PHP and working toward my
+          certification in Google Ads and Google Analytics.
+           </p>
+      </div>
+      <div id="contact-bar">
+        <li>
+          <a href="https://twitter.com/Jordan_EBranch">
+            <ul class="contactEmoji"><i class="fa fa-twitter"></i></ul>
+          </a>
+          <a href="https://www.linkedin.com/in/jordanebranch">
+            <ul class="contactEmoji"><i class="fa fa-linkedin"></i></ul>
+          </a>
+          <a href="jordane.branch@gmail.com">
+            <ul class="contactEmoji"><i class="fa fa-envelope"></i></ul>
+          </a>
+          <a href="jordane.branch@gmail.com">
+            <ul class="contactEmoji"><i class="fa fa-github"></i></ul></a>
+        </li>
+      </div>
+      <a href="https://drive.google.com/file/d/0B4DCAte3cN2qQjNLNG5HRjRfWE0/view"><button>Resume PDF</button></a>
+    </section>
+  </div>
+  <footer>
+
+  </footer>
+</body>
+
 </html>
