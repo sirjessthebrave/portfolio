@@ -5,29 +5,32 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
 <style>
- nav {
+nav {
   position: fixed;
   width: 100%;
-  margin: 0 auto;
+  padding: 0;
   text-align: center;
-  background-color: #383839;
   z-index: 2;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #383839;
+  background-color: white;
 }
 
 nav ul li {
   position: relative;
   display: inline-block;
   float: right;
-  width: 13%;
+  width: 15%;
 }
 
 nav ul li a {
   display: block;
   text-decoration: none;
-  color: #E8E8E8;
-  margin: 0px 0px;
+  color: #383839;
+  margin: 0px;
   padding-bottom: 10px;
-  font: small-caps 20px 'Lato', sans-serif;
+  font: small-caps 21px 'Lato', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -35,7 +38,7 @@ nav ul li a {
   float: left;
   text-align: left;
   color: #383839;
-  width: 40%;
+  width: 20%;
 }
 
 .banner {
@@ -185,8 +188,12 @@ table {
   font-style: italic;
 }
 
-a:link {
+#address a {
   color: white;
+}
+
+a:hover{
+  opacity: .7;
 }
 @media(max-width: 900px) {
   body{
